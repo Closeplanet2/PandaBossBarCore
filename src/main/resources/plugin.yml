@@ -2,5 +2,6 @@ name: PandaBossBarCore
 version: 1.0.0
 description: Core Plugin For Boss Bar Control
 authors: [Closeplanet2]
+depend: [PandaSpigotCore, PandaConfigCore]
 main: com.closeplanet2.pandabossbarcore.PandaBossBarCore
 api-version: 1.20
