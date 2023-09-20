@@ -15,8 +15,11 @@ public class PandaBossBarCore extends JavaPlugin {
     public static HashMap<String, PandaBossBar> BossBar_Register = new HashMap<>();
     public static BossBarSettings bossBarSettings;
 
-    public static void REMOVE_PLAYER(Player... player){ for(var uuid : BossBar_Register.keySet()) BossBar_Register.get(uuid).RemovePlayer(player); }
-    public static void REMOVE_PLAYER(){ for(var uuid : BossBar_Register.keySet()) BossBar_Register.get(uuid).RemovePlayer(); }
+    public static void ADD_PLAYERS(String barID, Player... players){BossBar_Register.get(barID).AddPlayer(players);}
+    public static void REMOVE_PLAYER(Player... players){ for(var barID : BossBar_Register.keySet()) REMOVE_PLAYER(barID, players);}
+    public static void REMOVE_PLAYER(String barID, Player... players){ BossBar_Register.get(barID).RemovePlayer(players); }
+    public static void REMOVE_PLAYER(){for(var barID : BossBar_Register.keySet()) REMOVE_PLAYER(barID);}
+    public static void REMOVE_PLAYER(String barID){BossBar_Register.get(barID).RemovePlayer();}
 
     @Override
     public void onEnable() {

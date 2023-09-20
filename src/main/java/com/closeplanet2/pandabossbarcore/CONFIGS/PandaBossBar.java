@@ -64,6 +64,7 @@ public class PandaBossBar implements PandaConfig {
     }
 
     public void AddPlayer(Player... players){
+        if(bossBar == null) return;
         for(var player : players){
             if(!PlayerAPI.GET_TOGGLE_STAT(player, TOGGLE_ACTIONS.PlayerGetBossBars)) continue;
             if(PlayerLinked(player)) continue;
@@ -71,9 +72,18 @@ public class PandaBossBar implements PandaConfig {
         }
     }
 
-    public boolean PlayerLinked(Player player){ return bossBar.getPlayers().contains(player); }
-    public void RemovePlayer(){ for(var player : bossBar.getPlayers()) RemovePlayer(player); }
-    public void RemovePlayer(Player... players){ for(var player : players) bossBar.removePlayer(player); }
+    public boolean PlayerLinked(Player player){
+        if(bossBar == null) return false;
+        return bossBar.getPlayers().contains(player);
+    }
+    public void RemovePlayer(){
+        if(bossBar == null) return;
+        for(var player : bossBar.getPlayers()) RemovePlayer(player);
+    }
+    public void RemovePlayer(Player... players){
+        if(bossBar == null) return;
+        for(var player : players) bossBar.removePlayer(player);
+    }
 
     public void TickBossBar(){
         currentCount += 1;
@@ -86,7 +96,7 @@ public class PandaBossBar implements PandaConfig {
         private String barID = "";
         private HashMap<Integer, BarData> barData = new HashMap<>();
         private List<Player> playersToAdd = new ArrayList<>();
-        private Integer highestStage = -1;
+        private Integer highestStage = 0;
 
         private Builder(){}
 
@@ -95,11 +105,10 @@ public class PandaBossBar implements PandaConfig {
             return this;
         }
 
-        public Builder addStage(Integer firstStage, Integer amount, BarData barData){
+        public Builder addStage(Integer amount, BarData barData){
             for(var i = 0; i < amount; i++){
-                var index = i + firstStage;
-                if(index > highestStage) highestStage = index;
-                this.barData.put(index, BarData.CLONE_WITH_NEW_KEY(barData, index));
+                this.barData.put(highestStage, BarData.CLONE_WITH_NEW_KEY(barData, highestStage));
+                highestStage += 1;
             }
             return this;
         }
