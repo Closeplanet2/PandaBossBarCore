@@ -19,14 +19,14 @@
 # Maven
 ```
 <repository>
-    <id>pandacommandcore</id>
-    <url>https://maven.pkg.github.com/closeplanet2/PandaCommandCore</url>
+    <id>pandabossbarcore</id>
+    <url>https://maven.pkg.github.com/closeplanet2/PandaBossBarCore</url>
 </repository>
 ```
 ```
 <dependency>
   <groupId>com.closeplanet2</groupId>
-  <artifactId>pandacommandcore</artifactId>
+  <artifactId>pandabossbarcore</artifactId>
   <version>1.0.0-beta</version>
 </dependency>
 ```
