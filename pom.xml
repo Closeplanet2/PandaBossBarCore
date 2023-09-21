@@ -22,11 +22,32 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <repositories>
+        <repository>
+            <id>pandaspigotcore</id>
+            <url>https://maven.pkg.github.com/closeplanet2/PandaSpigotCore</url>
+        </repository>
+        <repository>
+            <id>pandaconfigcore</id>
+            <url>https://maven.pkg.github.com/closeplanet2/PandaConfigCore</url>
+        </repository>
+    </repositories>
+
     <dependencies>
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot</artifactId>
             <version>1.20.1-R0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.closeplanet2</groupId>
+            <artifactId>pandaspigotcore</artifactId>
+            <version>1.0.0-beta</version>
+        </dependency>
+        <dependency>
+            <groupId>com.closeplanet2</groupId>
+            <artifactId>pandaconfigcore</artifactId>
+            <version>1.0.0-beta</version>
         </dependency>
     </dependencies>
 
