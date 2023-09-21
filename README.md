@@ -11,10 +11,15 @@
 - 1.20.1-R0.1-SNAPSHOT
 
 **Other Plguins:**
-- [PandaExternalCore](https://github.com/Closeplanet2/PandaExternalCore)
+- [PandaSpigotCore](https://github.com/Closeplanet2/PandaSpigotCore)
+- [PandaVariableCore](https://github.com/Closeplanet2/PandaVariableCore)
 - [PandaConfigCore](https://github.com/Closeplanet2/PandaConfigCore)
 - [PandaCommandCore](https://github.com/Closeplanet2/PandaCommandCore)
-- [PandaSpigotCore](https://github.com/Closeplanet2/PandaSpigotCore)
+- [PandaBossBarCore](https://github.com/Closeplanet2/PandaBossBarCore)
+- [PandaSideBarCore](https://github.com/Closeplanet2/PandaSideBarCore)
+- [PandaExternalCore](https://github.com/Closeplanet2/PandaExternalCore)
+- [PandaMatchmakingCore](https://github.com/Closeplanet2/PandaMatchmakingCore)
+- [PandaLeaderboardCore](https://github.com/Closeplanet2/PandaLeaderboardCore)
 
 # Maven
 ```
